@@ -30,7 +30,6 @@ const obtenerJoyasPorFiltros = async ({ precio_max, precio_min, metal, categoria
     filtros.push(`${campo} ${comparador} $${length + 1}`);
   };
 
-
   if (precio_max) agregarFiltro("precio", "<=", precio_max);
   if (precio_min) agregarFiltro("precio", ">=", precio_min);
   if (metal) agregarFiltro("metal", "=", metal);
@@ -42,6 +41,7 @@ const obtenerJoyasPorFiltros = async ({ precio_max, precio_min, metal, categoria
   }
   const { rows: joyas } = await pool.query(consulta, values);
   return joyas;
+
 
 };
 

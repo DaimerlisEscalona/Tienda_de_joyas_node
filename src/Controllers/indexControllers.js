@@ -6,7 +6,7 @@ const prepararHATEOAS = (joyas) => {
             name: m.nombre,
             href: `http://localhost:3000/joyas/joya/${m.id}`,
         }
-    }).slice(0, 4)
+    }).slice(0, joyas.length)
     let count = 0
     joyas.map(cantidadJoyas => count += cantidadJoyas.stock)
     const totalJoyas = joyas.length;
