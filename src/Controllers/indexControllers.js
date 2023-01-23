@@ -8,7 +8,9 @@ const consultas = {
   getJoyas: async (req, res) => {
     try {
       const queryStrings = req.query;
+
       const joyas = await obtenerJoyas(queryStrings);
+
       const HATEOAS = await prepararHATEOAS(joyas);
       res.json(HATEOAS);
     } catch (error) {
@@ -42,7 +44,7 @@ const prepararHATEOAS = (joyas) => {
     .map((m) => {
       return {
         name: m.nombre,
-        href: `http://localhost:${process.env.PORT}/joyas/joya/${m.id}`,
+        href: `http://${process.env.SERVERHOST}:${process.env.PORT}/joyas/joya/${m.id}`,
       };
     })
     .slice(0, joyas.length);
