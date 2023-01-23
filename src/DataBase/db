@@ -1,11 +1,24 @@
+// const { Pool } = require("pg");
+
+// const pool = new Pool({
+//   host: "postgresql-daimerlisescalona.alwaysdata.net",
+//   user: "daimerlisescalona",
+//   password: "Daimerlis123*",
+//   database: "daimerlisescalona_joyas",
+//   port: 5432,
+//   allowExitOnIdle: true,
+// });
+
+// module.exports = pool;
+
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  host: "postgresql-daimerlisescalona.alwaysdata.net",
-  user: "daimerlisescalona",
-  password: "Daimerlis123*",
-  database: "daimerlisescalona_joyas",
-  port: 5432,
+  host: "containers-us-west-128.railway.app",
+  user: "postgres",
+  password: "aRIagbZblDPWj8gXO1iq",
+  database: "railway",
+  port: 5659,
   allowExitOnIdle: true,
 });
 
