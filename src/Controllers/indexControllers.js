@@ -42,7 +42,7 @@ const prepararHATEOAS = (joyas) => {
     .map((m) => {
       return {
         name: m.nombre,
-        href: `http://localhost:3000/joyas/joya/${m.id}`,
+        href: `http://localhost:${process.env.PORT}/joyas/joya/${m.id}`,
       };
     })
     .slice(0, joyas.length);

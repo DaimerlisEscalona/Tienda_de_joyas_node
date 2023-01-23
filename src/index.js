@@ -1,9 +1,14 @@
 const express = require("express");
 const cors = require('cors');
 const indexRoutes = require('./Routes/indexRoutes');
+const dotenv = require("dotenv");
+
+dotenv.config({path:'./src/.env'});
+
+const  {PORT}  = process.env;
 
 const app = express();
-
+console.log(process.env.PORT)
 app.use(express.json());
 app.use(cors());
 
@@ -15,4 +20,9 @@ app.use('*', function (req, res) {
 
 });
 
-app.listen(process.env.PORT, console.log("¡Servidor encendido de manera exitosa!"));
+app.listen(PORT, (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log(`server is running on port ${PORT}`);
+  });
