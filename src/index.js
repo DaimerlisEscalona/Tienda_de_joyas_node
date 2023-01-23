@@ -15,4 +15,4 @@ app.use('*', function (req, res) {
 
 });
 
-app.listen(3000, console.log("¡Servidor encendido de manera exitosa!"));
+app.listen(process.env.PORT, console.log("¡Servidor encendido de manera exitosa!"));
