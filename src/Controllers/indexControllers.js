@@ -40,11 +40,20 @@ const consultas = {
 };
 
 const prepararHATEOAS = (joyas) => {
+
+  const {SERVERHOST} = process.env
+console.log(SERVERHOST)
+let var_http = "localhost"
+if(SERVERHOST === "localhost" )
+var_http = "http"
+else 
+var_http = "https"
+
   const results = joyas
     .map((m) => {
       return {
         name: m.nombre,
-        href: `http://${process.env.SERVERHOST}:${process.env.PORT}/joyas/joya/${m.id}`,
+        href: `${var_http}://${process.env.SERVERHOST}:${process.env.PORT}/joyas/joya/${m.id}`,
       };
     })
     .slice(0, joyas.length);
