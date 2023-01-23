@@ -17,10 +17,19 @@ const obtenerJoyas = async ({ limits = 3, page = 1, order_by = "stock_ASC" }) =>
       res.status(500).send(error);
     }
   }
+  
+const obtenerUnicaJoya = async (id) => {
+  const consulta = "SELECT * FROM inventario WHERE id = $1";
+  const values = [id];
+  const { rowCount, rows } = await pool.query(consulta, values);
 
-}
+  if (rowCount === 0) {
+    throw { code: 404, message: "No se consiguió ninguna joya con este id" };
+  } else return rows;
+};
 
 const obtenerJoyasPorFiltros = async ({ precio_max, precio_min, metal, categoria, }) => {
+
   let filtros = [];
   const values = [];
 
@@ -41,19 +50,6 @@ const obtenerJoyasPorFiltros = async ({ precio_max, precio_min, metal, categoria
   }
   const { rows: joyas } = await pool.query(consulta, values);
   return joyas;
-
-
-};
-
-const obtenerUnicaJoya = async (id) => {
-  const consulta = "SELECT * FROM inventario WHERE id = $1";
-  const values = [id];
-  const { rowCount, rows } = await pool.query(consulta, values);
-  console.log(rowCount)
-  if (rowCount === 0) {
-    throw { code: 404, message: "No se consiguió ninguna joya con este id" }
-  }
-  else return rows
 
 };
 

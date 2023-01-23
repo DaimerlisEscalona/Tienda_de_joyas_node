@@ -1,25 +1,15 @@
-// const { Pool } = require("pg");
-
-// const pool = new Pool({
-//   host: "postgresql-daimerlisescalona.alwaysdata.net",
-//   user: "daimerlisescalona",
-//   password: "Daimerlis123*",
-//   database: "daimerlisescalona_joyas",
-//   port: 5432,
-//   allowExitOnIdle: true,
-// });
-
-// module.exports = pool;
-
 const { Pool } = require("pg");
+const dotenv = require("dotenv");
+dotenv.config({path:'./src/.env'});
 
 const pool = new Pool({
-  host: "containers-us-west-128.railway.app",
-  user: "postgres",
-  password: "aRIagbZblDPWj8gXO1iq",
-  database: "joyas",
-  port: 5659,
+  host: process.env.HOST || '',
+  user: process.env.USER || '',
+  password: process.env.PASSWORD || '',
+  database: process.env.DATABASE || '',
+  port: process.env.PGPORT || '',
   allowExitOnIdle: true,
+
 });
 
 module.exports = pool;
