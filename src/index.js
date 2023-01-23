@@ -25,8 +25,8 @@ app.use('*', function (req, res) {
 //   console.log(`server is running on port ${PORT}`);
 // });
 
-//app.listen(3000, console.log("¡Servidor encendido de manera exitosa!"));
+app.listen(3000, console.log("¡Servidor encendido de manera exitosa!"));
 
-app.listen(0, function(){
-    console.log("¡Servidor encendido de manera exitosa!", this.address().port)
-}) 
+// app.listen(0, function(){
+//     console.log("¡Servidor encendido de manera exitosa!", this.address().port)
+// }) 
