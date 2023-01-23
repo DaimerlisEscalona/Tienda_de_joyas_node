@@ -17,7 +17,7 @@ const pool = new Pool({
   host: "containers-us-west-128.railway.app",
   user: "postgres",
   password: "aRIagbZblDPWj8gXO1iq",
-  database: "railway",
+  database: "joyas",
   port: 5659,
   allowExitOnIdle: true,
 });
