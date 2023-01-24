@@ -1,3 +1,7 @@
+// PARTICIPANTES:
+// DAIMERLIS ESCALONA
+// MARGLODIS TOVAR
+
 const express = require("express");
 const cors = require("cors");
 const indexRoutes = require("./Routes/indexRoutes");
