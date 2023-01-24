@@ -1,4 +1,10 @@
 # Tienda_de_joyas_node
+// PARTICIPANTES:
+// DAIMERLIS ESCALONA
+// MARGLODIS TOVAR
+
+DEPLOY: https://tiendadejoyasnode-production-md.up.railway.app/joyas
+
 Desafio - Tienda de Joyas API REST
 La tienda de joyas My Precious Spa necesita cambiar su aplicación de escritorio por una
 moderna y dinámica. Para realizar esta tarea, contactó a un desarrollador Full Stack
